@@ -2,12 +2,10 @@ import pickle
 import streamlit as st
 import numpy as np
 import pandas as pd
-from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import train_test_split
 from helper import converter
 
 
-model = pickle.load(open('./static/model.sav','rb'))
+model = pickle.load(open("./static/model.sav",'rb'))
 def main():
     st.set_page_config(page_title="Cardiovascular Diseas Prediction")
     with st.container():
