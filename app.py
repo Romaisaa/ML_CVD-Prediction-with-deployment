@@ -7,7 +7,6 @@ from sklearn.model_selection import train_test_split
 from helper import converter
 
 
-
 model = pickle.load(open('./static/model.sav','rb'))
 def main():
     st.set_page_config(page_title="Cardiovascular Diseas Prediction")
@@ -43,7 +42,6 @@ def main():
                 st.write("Thanks God, You don't need to woory")
             else: 
                 st.write("Sorry for news, but you need to see doctor")
-
 
 
 
