@@ -8,7 +8,7 @@ from streamlit_option_menu import option_menu
 
 
 
-model = pickle.load(open('C:/Users/User/Desktop/Stats project/pro/logtrModel.sav','rb'))
+# model = pickle.load(open('C:/Users/User/Desktop/Stats project/pro/logtrModel.sav','rb'))
 def main():
     st.set_page_config(page_title="Cardiovascular Diseas Prediction")
 
@@ -26,27 +26,25 @@ def main():
         st.write("Please, Answer the following honstly")
 
     #input Var
-    Age = st.text_input("Age")
-    gender = st.selectbox("Gender",("Male","Female","Engineer"))
-    if(gender=="Engineer"):
-        st.write("Oh baby! you don't need checkup you are died" )
+    Age = st.number_input("Age")
+    gender = st.selectbox("Gender",(" ","Male","Female"))
+    
 
-    hieght= st.text_input("Height")
-    wieght= st.text_input("weight")
-    ap_hi= st.text_input("Ap_hi")
-    ap_lo= st.text_input("Ap_lo")
-    cholestrol =st.selectbox("Cholestrol Level",("Normal","Above Normal","Well Above normal")) 
-    glucose=st.selectbox("Glucose Level",("Normal","Above Normal","Well Above normal")) 
+    hieght= st.number_input("Height")
+    wieght= st.number_input("weight")
+    ap_hi= st.number_input("Ap_hi")
+    ap_lo= st.number_input("Ap_lo")
+    cholestrol =st.selectbox("Cholestrol Level",(" ","Normal","Above Normal","Well Above normal")) 
+    glucose=st.selectbox("Glucose Level",(" ","Normal","Above Normal","Well Above normal")) 
     smoke = st.radio("Are You a Smoker",("Yes","No"))
     alco = st.radio("Do you drink Alcohol",("Yes","No"))
     active = st.radio("Do you usually do physical activities",("Yes","No")) 
 
-    if st.button("Ckeck"):
+    if st.button("Check"):
         gender = 1 if gender == 'Male' else 0
         smoke = 1 if smoke == 'Yes' else 0
         alco = 1 if alco == 'Yes' else 0
         active = 1 if active == 'Yes' else 0
-        makeprediction=model.predict([[Age,gender,hieght,wieght,ap_hi,ap_lo,cholestrol,glucose,smoke,alco,active]])
 
 if __name__=="__main__":
     main()
