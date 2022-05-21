@@ -6,11 +6,11 @@ from helper import converter
 
 model = pickle.load(open("./static/model.sav",'rb'))
 def main():
-    st.set_page_config(page_title="Cardiovascular Diseas Prediction")
+    st.set_page_config(page_title="Cardiovascular Disease Prediction")
     col1, col2 =  st.columns([20, 30])
     with st.container():
             with col1:
-                st.title(" Weclome to CVD check up")
+                st.title(" Weclome to CVD Check-up")
             with col2:
                 st.image("./static/logo.png", width=400)
 
